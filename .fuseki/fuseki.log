@@ -1,0 +1,45 @@
+[2024-08-31 18:48:43] Server     INFO  Apache Jena Fuseki 4.6.1
+[2024-08-31 18:48:43] Server     INFO  Configuration file: ../.fuseki.ttl
+[2024-08-31 18:48:43] Server     INFO  Path = /tutorial1
+[2024-08-31 18:48:43] Server     INFO  System
+[2024-08-31 18:48:43] Server     INFO    Memory: 4.0 GiB
+[2024-08-31 18:48:43] Server     INFO    Java:   17.0.12
+[2024-08-31 18:48:43] Server     INFO    OS:     Windows 10 10.0 amd64
+[2024-08-31 18:48:43] Server     INFO    PID:    34760
+[2024-08-31 18:48:43] Server     INFO  Start Fuseki (http=3030)
+[2024-08-31 18:50:29] Fuseki     INFO  [1] GET http://localhost:3030/tutorial1/sparql?query=select%20?g%20%7B%20graph%20?g%20%7B%20?o%20a%20%3Chttp://www.w3.org/2002/07/owl%23Ontology%3E%20%7D%20%7D
+[2024-08-31 18:50:29] Fuseki     INFO  [1] Query = select ?g { graph ?g { ?o a <http://www.w3.org/2002/07/owl#Ontology> } }
+[2024-08-31 18:50:29] Fuseki     INFO  [1] 200 OK (60 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [3] PUT http://localhost:3030/tutorial1?graph=http://example.com/tutorial1/description/restaurant
+[2024-08-31 18:50:29] Fuseki     INFO  [5] PUT http://localhost:3030/tutorial1?graph=http://example.com/tutorial1/description/bundle
+[2024-08-31 18:50:29] Fuseki     INFO  [6] PUT http://localhost:3030/tutorial1?graph=http://example.com/tutorial1/description/bundle/properties
+[2024-08-31 18:50:29] Fuseki     INFO  [4] PUT http://localhost:3030/tutorial1?graph=http://example.com/tutorial1/vocabulary/pizza-bundle
+[2024-08-31 18:50:29] Fuseki     INFO  [7] PUT http://localhost:3030/tutorial1?graph=http://example.com/tutorial1/description/bundle/classes
+[2024-08-31 18:50:29] Fuseki     INFO  [2] PUT http://localhost:3030/tutorial1?graph=http://purl.org/dc/elements/1.1
+[2024-08-31 18:50:29] Fuseki     INFO  [8] PUT http://localhost:3030/tutorial1?graph=http://example.com/tutorial1/description/bundle/individuals
+[2024-08-31 18:50:29] Fuseki     INFO  [9] PUT http://localhost:3030/tutorial1?graph=http://example.com/tutorial1/vocabulary/pizza
+[2024-08-31 18:50:29] Fuseki     INFO  [4] Body: Content-Length=32185, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=464 Triples=464 Quads=0
+[2024-08-31 18:50:29] Fuseki     INFO  [4] 201 Created (122 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [8] Body: Content-Length=34344, Content-Type=text/turtle, Charset=null => Turtle : Count=408 Triples=408 Quads=0
+[2024-08-31 18:50:29] Fuseki     INFO  [8] 201 Created (146 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [5] Body: Content-Length=15261, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=116 Triples=116 Quads=0
+[2024-08-31 18:50:29] Fuseki     INFO  [5] 201 Created (159 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [6] Body: Content-Length=6830, Content-Type=text/turtle, Charset=null => Turtle : Count=84 Triples=84 Quads=0
+[2024-08-31 18:50:29] Fuseki     INFO  [6] 201 Created (164 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [2] Body: Content-Length=4083, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=27 Triples=27 Quads=0
+[2024-08-31 18:50:29] Fuseki     INFO  [2] 201 Created (169 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [7] Body: Content-Length=16528, Content-Type=text/turtle, Charset=null => Turtle : Count=229 Triples=229 Quads=0
+[2024-08-31 18:50:29] Fuseki     INFO  [7] 201 Created (177 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [3] Body: Content-Length=16173, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=125 Triples=125 Quads=0
+[2024-08-31 18:50:29] Fuseki     INFO  [3] 201 Created (185 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [9] Body: Content-Length=41579, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=386 Triples=386 Quads=0
+[2024-08-31 18:50:29] Fuseki     INFO  [9] 201 Created (205 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [10] GET http://localhost:3030/tutorial1/sparql?query=PREFIX%20%20rdfs:%20%3Chttp://www.w3.org/2000/01/rdf-schema%23%3E%0APREFIX%20%20pizza:%20%3Chttp://example.com/tutorial1/vocabulary/pizza%23%3E%0A%0ASELECT%20DISTINCT%20%20?pizza%0AWHERE%0A%20%20%7B%20?pizza%20%20a%20%20pizza:Pizza%0A%20%20%20%20FILTER%20NOT%20EXISTS%20%7B%20?pizza%20%20pizza:hasTopping%20%20?nvt%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20FILTER%20NOT%20EXISTS%20%7B%20?nvt%20%20a%20%20pizza:VegetableTopping%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%7D%0A
+[2024-08-31 18:50:29] Fuseki     INFO  [12] GET http://localhost:3030/tutorial1/sparql?query=PREFIX%20%20rdfs:%20%3Chttp://www.w3.org/2000/01/rdf-schema%23%3E%0APREFIX%20%20pizza:%20%3Chttp://example.com/tutorial1/vocabulary/pizza%23%3E%0A%0ASELECT%20DISTINCT%20%20?pizza%0AWHERE%0A%20%20%7B%20?pizza%20%20pizza:hasTopping%20%20%20%20_:b0%20.%0A%20%20%20%20_:b0%20%20%20%20pizza:hasSpiceness%20%20%22Hot%22%0A%20%20%7D%0A
+[2024-08-31 18:50:29] Fuseki     INFO  [11] GET http://localhost:3030/tutorial1/sparql?query=PREFIX%20%20rdfs:%20%3Chttp://www.w3.org/2000/01/rdf-schema%23%3E%0APREFIX%20%20pizza:%20%3Chttp://example.com/tutorial1/vocabulary/pizza%23%3E%0A%0ASELECT%20%20?toppingKind%20%28COUNT%28?topping%29%20AS%20?toppingCount%29%0AWHERE%0A%20%20%7B%20?r%20%20%20%20%20%20%20%20pizza:hasTopping%20%20?topping%20.%0A%20%20%20%20?topping%20%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20?toppingKind%20.%0A%20%20%20%20?toppingKind%20%20rdfs:subClassOf%20%20pizza:PizzaTopping%0A%20%20%7D%0AGROUP%20BY%20?toppingKind%0A
+[2024-08-31 18:50:29] Fuseki     INFO  [12] Query = PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  pizza: <http://example.com/tutorial1/vocabulary/pizza#>  SELECT DISTINCT  ?pizza WHERE   { ?pizza  pizza:hasTopping    _:b0 .     _:b0    pizza:hasSpiceness  "Hot"   } 
+[2024-08-31 18:50:29] Fuseki     INFO  [10] Query = PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  pizza: <http://example.com/tutorial1/vocabulary/pizza#>  SELECT DISTINCT  ?pizza WHERE   { ?pizza  a  pizza:Pizza     FILTER NOT EXISTS { ?pizza  pizza:hasTopping  ?nvt                         FILTER NOT EXISTS { ?nvt  a  pizza:VegetableTopping }                       }   } 
+[2024-08-31 18:50:29] Fuseki     INFO  [11] Query = PREFIX  rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX  pizza: <http://example.com/tutorial1/vocabulary/pizza#>  SELECT  ?toppingKind (COUNT(?topping) AS ?toppingCount) WHERE   { ?r        pizza:hasTopping  ?topping .     ?topping  a                 ?toppingKind .     ?toppingKind  rdfs:subClassOf  pizza:PizzaTopping   } GROUP BY ?toppingKind 
+[2024-08-31 18:50:29] Fuseki     INFO  [10] 200 OK (33 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [12] 200 OK (33 ms)
+[2024-08-31 18:50:29] Fuseki     INFO  [11] 200 OK (33 ms)
